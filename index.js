@@ -31,7 +31,9 @@ try {
 
   console.log("sam debug", labelBranches);
 
-  //let repoBranches = getBranches(client, pullRequest);
+  let repoBranches = getBranches(client, pullRequest);
+
+  console.log("sam debug", repoBranches);
 
 
 } catch (error) {
