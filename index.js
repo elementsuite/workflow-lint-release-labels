@@ -3,7 +3,8 @@ const github = require('@actions/github');
 const exec = require('child_process').exec;
 
 var branchExists = async function(branch) {
-  return await exec('git branch | grep ' + branch);
+  let { stdout } = await exec('git branch | grep ' + branch);
+  return stdout;
 }
 
 var getBranch = async function(client, pullRequest, branch) {
@@ -38,9 +39,7 @@ var main = async function() {
 
     console.log("sam debug", labelBranches);
 
-    exec('git branch | grep ' + branch, function(stdin, stdout, stderr) {
-      console.log("sam debug 2", stdout);
-    });
+    console.log("sam debug 2", branchExists(listBranches[0]));
 
 
   } catch (error) {
