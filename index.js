@@ -1,5 +1,10 @@
 const core = require('@actions/core');
 const github = require('@actions/github');
+const exec = require('child_process').exec;
+
+var branchExists = async function(branch) {
+  return await exec('git branch | grep ' + branch);
+}
 
 var getBranch = async function(client, pullRequest, branch) {
   return await client.repos.getBranch({
@@ -33,7 +38,7 @@ var main = async function() {
 
     console.log("sam debug", labelBranches);
 
-    let repoBranch = await getBranch(client, pullRequest, 'branch that probably doesnt exist');
+    let repoBranch = await branchExists(labelBranches[0]);
 
     console.log("sam debug", repoBranch);
 

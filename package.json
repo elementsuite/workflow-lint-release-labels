@@ -19,6 +19,7 @@
   "homepage": "https://github.com/Samuel1989/pull-request-linter#readme",
   "dependencies": {
     "@actions/core": "^1.2.0",
-    "@actions/github": "^2.0.0"
+    "@actions/github": "^2.0.0",
+    "child_process": "^1.0.2"
   }
 }
