@@ -1,6 +1,7 @@
+const { promisify } = require('util');
 const core = require('@actions/core');
 const github = require('@actions/github');
-const exec = require('child_process').exec;
+const exec = promisify(require('child_process').exec);
 
 var branchExists = async function(branch) {
   let { stdout } = await exec('git branch | grep ' + branch);
