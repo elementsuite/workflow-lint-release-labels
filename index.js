@@ -34,7 +34,7 @@ var main = async function() {
 
     let repoBranches = await getBranches(client, pullRequest);
 
-    console.log("sam debug", repoBranches);
+    console.log("sam debug", repoBranches.data.length);
 
 
   } catch (error) {
