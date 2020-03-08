@@ -38,9 +38,9 @@ var main = async function() {
 
     console.log("sam debug", labelBranches);
 
-    let repoBranch = await branchExists(labelBranches[0]);
-
-    console.log("sam debug", repoBranch.stdout);
+    exec('git branch | grep ' + branch, function(stdin, stdout, stderr) {
+      console.log("sam debug 2", stdout);
+    });
 
 
   } catch (error) {
