@@ -33,7 +33,7 @@ var main = async function() {
 
     console.log("sam debug", labelBranches);
 
-    let repoBranch = await getBranch(client, pullRequest, labelBranches[0]);
+    let repoBranch = await getBranch(client, pullRequest, 'branch that probably doesnt exist');
 
     console.log("sam debug", repoBranch);
 
