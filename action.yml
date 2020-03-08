@@ -1,0 +1,10 @@
+name: 'Auto Merge PR'
+description: 'An action to attempt to auto merge PRs'
+inputs:
+  title-regex:
+    description: 'Regex used to lint pull request title'
+    required: true
+    default: '.*'
+runs:
+  using: 'node12'
+  main: 'index.js'
