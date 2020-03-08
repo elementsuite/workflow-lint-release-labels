@@ -39,7 +39,8 @@ var main = async function() {
 
     console.log("sam debug", labelBranches);
     console.log("sam debug 1");
-    console.log("sam debug 2", branchExists(labelBranches[0]));
+    let branch = await branchExists(labelBranches[0]);
+    console.log("sam debug 2", branch);
 
 
   } catch (error) {
