@@ -38,7 +38,7 @@ var main = async function() {
     }
 
     console.log("sam debug", labelBranches);
-
+    console.log("sam debug 1");
     console.log("sam debug 2", branchExists(listBranches[0]));
 
 
