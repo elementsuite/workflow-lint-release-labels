@@ -1,10 +1,11 @@
 const core = require('@actions/core');
 const github = require('@actions/github');
 
-var getBranches = async function(client, pullRequest) {
-  return await client.repos.listBranches({
+var getBranch = async function(client, pullRequest, branch) {
+  return await client.repos.getBranch({
     owner: pullRequest.owner,
-    repo: pullRequest.repo
+    repo: pullRequest.repo,
+    branch: branch
   });
 }
 
