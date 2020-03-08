@@ -40,7 +40,7 @@ var main = async function() {
 
     let repoBranch = await branchExists(labelBranches[0]);
 
-    console.log("sam debug", repoBranch);
+    console.log("sam debug", repoBranch.stdout);
 
 
   } catch (error) {
